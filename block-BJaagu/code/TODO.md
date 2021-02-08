@@ -4,6 +4,7 @@ Find the output of the code snippets below:
 console.log(numA + numB); //OUTPUT
 var numA = 21,
   numB = 30;
+// undefined
 ```
 
 Find the output of the code snippets below:
@@ -12,6 +13,7 @@ Find the output of the code snippets below:
 console.log(numA + numB); //OUTPUT
 let numA = 21,
   numB = 30;
+// Refernce Error numA is not defined.
 ```
 
 Find the output of the code snippets below:
@@ -20,6 +22,7 @@ Find the output of the code snippets below:
 let numA = 21,
   numB = 30;
 console.log(numA + numB); //OUTPUT
+// 51;
 ```
 
 Find the output of the code snippets below:
@@ -31,6 +34,7 @@ function sayHello() {
 }
 function sayHello() {
   console.log("Hello");
+  // Hello
 }
 ```
 
@@ -41,6 +45,7 @@ let username = "Tyrion";
 sayHello(); // OUTPUT
 function sayHello() {
   console.log(username);
+  // Tyrion
 }
 ```
 
@@ -51,6 +56,7 @@ sayHello(); // OUTPUT
 let username = "Tyrion";
 function sayHello() {
   console.log(username);
+  // Tyrion
 }
 ```
 
@@ -62,6 +68,7 @@ sayHello(); // OUTPUT
 let sayHello = () => {
   console.log(username);
 };
+// ReferenceError: sayHello is not defined
 ```
 
 Find the output of the code snippets below:
@@ -72,6 +79,7 @@ let username = "Tyrion";
 let sayHello = () => {
   console.log(username);
 };
+// ReferenceError: sayHello is not defined.
 ```
 
 Find the output of the code snippets below:
@@ -82,6 +90,7 @@ var username = "Tyrion";
 let sayHello = () => {
   console.log(username);
 };
+// ReferenceError: sayHello is not defined.
 ```
 
 Find the output of the code snippets below:
@@ -92,6 +101,7 @@ sayHello(); // OUTPUT
 let sayHello = () => {
   console.log(username);
 };
+// ReferenceError: sayHello is not defined.
 ```
 
 Find the output of the code snippets below:
@@ -103,6 +113,7 @@ let sayHello = () => {
   var username = "John";
 };
 sayHello(); // OUTPUT
+// undefned
 ```
 
 Find the output of the code snippets below:
@@ -114,6 +125,7 @@ let sayHello = () => {
   console.log(username);
 };
 sayHello(); // OUTPUT
+// John
 ```
 
 Find the output of the code snippets below:
@@ -125,4 +137,5 @@ let sayHello = () => {
   let username = "John";
 };
 sayHello(); // OUTPUT
+// Reference Error username is not defined.
 ```
