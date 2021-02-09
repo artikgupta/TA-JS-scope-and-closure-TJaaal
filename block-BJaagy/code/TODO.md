@@ -1,6 +1,20 @@
 1. Create a function by your choice that accepts a callback function.
 
+function subtraction(cb){
+let num1 = 12
+let num2 = 32
+return cb(num1,mun2)
+}
+
+function sub(a,b){
+return a-b
+}
+
 2. Create a function by you choice that returns a function reference.
+
+function ref(){
+return function add(){}
+}
 
 3. Create a higher order function called `map` that takes two inputs:
    - An array of numbers/string/boolean etc
@@ -10,6 +24,15 @@ Have `map` return a new array filled with values that are the result of the 'cal
 
 ```js
 // Your code goes here
+
+function customMap(array, cb) {
+  let result = [];
+  for (let i = 0; i < array.length; i++) {
+    let ele = array[i];
+    result.push(cb(arr[i]));
+  }
+  return result;
+}
 
 // Test Your Code
 function multiplyByTwo(n) {
@@ -25,9 +48,17 @@ multiplyByTwo(2); //-> 4
 ```js
 // Your code goes here
 
+function forEach(array, cb) {
+  let result = [];
+  for (let i = 0; i < array.length; i++) {
+    let ele = arr[i];
+    result.push(cb(arr[i]));
+  }
+}
+
 // Test Your Code
-let alphabet = '';
-let letters = ['a', 'b', 'c', 'd'];
+let alphabet = "";
+let letters = ["a", "b", "c", "d"];
 forEach(letters, function (char) {
   alphabet += char;
 });
@@ -38,6 +69,15 @@ console.log(alphabet); //prints 'abcd'
 
 ```js
 // Test Your Code
+function filter(arr, cb) {
+  let result = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (cb(arr[i])) {
+      result.push(arr[i]);
+    }
+  }
+  return result;
+}
 
 var numbers = [1, 3, 5, 4, 7, 89, 234, 20];
 let even = filter(numbers, function (n) {
