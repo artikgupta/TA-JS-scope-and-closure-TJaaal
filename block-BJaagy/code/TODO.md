@@ -29,7 +29,7 @@ function customMap(array, cb) {
   let result = [];
   for (let i = 0; i < array.length; i++) {
     let ele = array[i];
-    result.push(cb(arr[i]));
+    result.push(cb(ele));
   }
   return result;
 }
@@ -49,10 +49,9 @@ multiplyByTwo(2); //-> 4
 // Your code goes here
 
 function forEach(array, cb) {
-  let result = [];
   for (let i = 0; i < array.length; i++) {
-    let ele = arr[i];
-    result.push(cb(arr[i]));
+    let ele = array[i];
+    cb(ele);
   }
 }
 
