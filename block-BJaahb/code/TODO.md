@@ -5,12 +5,12 @@ function outer() {
   let b = 10;
   function inner() {
     let a = 20;
-    console.log(a + b);
+    console.log(a + b); //30
   }
   return inner;
 }
-let getSum = outer();
-let num = getSum();
+let getSum = outer(); //inner
+let num = getSum(); //30
 ```
 
 2.
@@ -28,10 +28,10 @@ function getCounter() {
 
 let counter = getCounter();
 
-counter(); // output
-counter(); // output
-counter(); // output
-counter(); // output
+counter(); // output 0
+counter(); // output 1
+counter(); // output 2
+counter(); // output 3
 ```
 
 3. Create the execution context diagram
