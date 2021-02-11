@@ -191,7 +191,8 @@ The returned function accepts a string (children) and returns the children with 
 ```js
 function createTag(eleName) {
   return function (str) {
-    return `<${eleName}>${str}</${eleName}>`;
+    return `<${eleName}>${stre
+    </${eleName}>`;
   };
 }
 
