@@ -5,58 +5,58 @@ Watch this video before doing the exercise: https://www.youtube.com/watch?v=XgSj
 1. Guess the output:
 
 ```js
-let firstName = 'Arya';
-const lastName = 'Stark';
-var knownAs = 'no one';
+let firstName = "Arya";
+const lastName = "Stark";
+var knownAs = "no one";
 
 console.log(
-  window.firstName,
-  window.lastName,
-  window.knownAs
+  window.firstName, // undefined
+  window.lastName, // undefined
+  window.knownAs // no one
 );
 ```
 
 2. Guess the output:
 
 ```js
-let firstName = 'Arya';
-const lastName = 'Stark';
-var knownAs = 'no one';
+let firstName = "Arya";
+const lastName = "Stark";
+var knownAs = "no one";
 
 function fullName(a, b) {
   return a + b;
 }
 
-console.log(window.fullName(firstName, lastName));
+console.log(window.fullName(firstName, lastName)); // AryaStark
 ```
 
 3. Make a Execution Context Diagram for the following JS and write the output.
 
 ```js
-fucntion addOne(num){
+function addOne(num) {
   return num + 1;
 }
 var one = addOne(0);
 var two = addOne(1);
-console.log(one, two);
+console.log(one, two); // 1,2;
 ```
 
 4. Make a Execution Context Diagram for the following JS and write the output.
 
 ```js
 var one = addOne(0);
-fucntion addOne(num){
+function addOne(num) {
   return num + 1;
 }
 var two = addOne(1);
-console.log(one, two);
+console.log(one, two); //1,2
 ```
 
 5. Make a Execution Context Diagram for the following JS and write the output.
 
 ```js
 console.log(addOne(0));
-fucntion addOne(num){
+function addOne(num) {
   return num + 1;
 }
 var two = addOne(1);
@@ -95,7 +95,7 @@ function isAwesome() {
   }
   console.log(awesome);
 }
-isAwesome();
+isAwesome(); // undefined
 ```
 
 9. What will be the output of the following
@@ -108,7 +108,7 @@ function isAwesome() {
   }
   console.log(awesome);
 }
-isAwesome();
+isAwesome(); // true
 ```
 
 10. What will be the output of the following
@@ -119,52 +119,53 @@ function isAwesome() {
   if (false) {
     awesome = true;
   }
-  console.log(awesome);
+  console.log(awesome); // undefined
 }
-isAwesome();
+isAwesome(); // undefined
 ```
 
 11. What will be the output of the following
 
 ```js
-let firstName = 'Arya';
-const lastName = 'Stark';
-var knownAs = 'no one';
+let firstName = "Arya";
+const lastName = "Stark";
+var knownAs = "no one";
 
 function fullName(a, b) {
   return a + b;
 }
 const name = fullName(firstName, lastName);
-console.log(name);
+console.log(name); // Arya Stark
 ```
 
 12. Guess the output of the code below with a reason.
 
 ```js
 function sayHello() {
-  let name = 'Arya Stark';
+  let name = "Arya Stark";
 }
 sayHello();
 
-console.log(name);
+console.log(name); // undefined, because the function is not returning any value.
 ```
 
 13. Guess the output of the code below with a reason.
 
 ```js
 if (true) {
-  var name = 'Arya Stark';
+  var name = "Arya Stark";
 }
-console.log(name);
+console.log(name); // Arya Stark, because var is functional scoped so we can access the value of var, if it is block scoped.
 ```
 
 14. Guess the output of the code below with a reason.
 
 ```js
 if (true) {
-  let name = 'Arya Stark';
+  let name = "Arya Stark";
 }
 console.log(name);
+// undefined
 ```
 
 15. Guess the output of the code below with a reason.
@@ -173,7 +174,7 @@ console.log(name);
 for (var i = 0; i < 20; i++) {
   //
 }
-console.log(i);
+console.log(i); // 20, because var is functional scoped, so the value of variable can be accessed outside the scope, so after the loop termiantes the value of i was 20.
 ```
 
 16. Guess the output of the code below with a reason.
@@ -182,7 +183,7 @@ console.log(i);
 for (let i = 0; i < 20; i++) {
   //
 }
-console.log(i);
+console.log(i); // i is not defined, since let created a block scope so the value of a variable cannot be acessed outside the scope.
 ```
 
 17. Guess the output and the reason behind that.
@@ -190,9 +191,9 @@ console.log(i);
 ```js
 function sample() {
   if (true) {
-    var username = 'John Snow';
+    var username = "John Snow";
   }
-  console.log(username);
+  console.log(username); // John Snow
 }
 sample();
 ```
@@ -202,9 +203,9 @@ sample();
 ```js
 function sample() {
   if (true) {
-    let username = 'John Snow';
+    let username = "John Snow";
   }
-  console.log(username);
+  console.log(username); // username is not defined.
 }
 sample();
 ```
@@ -213,12 +214,12 @@ sample();
 
 ```js
 function sample() {
-  var username = 'Arya Stark';
+  var username = "Arya Stark";
   if (true) {
-    var username = 'John Snow';
-    console.log(username);
+    var username = "John Snow";
+    console.log(username); // John Snow
   }
-  console.log(username, 'second');
+  console.log(username, "second"); //John Snow,second
 }
 sample();
 ```
@@ -227,12 +228,12 @@ sample();
 
 ```js
 function sample() {
-  let username = 'Arya Stark';
+  let username = "Arya Stark";
   if (true) {
-    let username = 'John Snow';
-    console.log(username, 'first');
+    let username = "John Snow";
+    console.log(username, "first"); // John Snow
   }
-  console.log(username, 'second');
+  console.log(username, "second"); // Arya Stark,second
 }
 sample();
 ```
@@ -247,7 +248,10 @@ function sample(...args) {
   }
 }
 
-sample('First', 'Second', 'Third');
+sample("First", "Second", "Third");
+//Hello I am First
+//Hello I am Second
+// Hello I am Third
 ```
 
 22. Guess the output and the reason behind that.
@@ -260,7 +264,10 @@ function sample(...args) {
   }
 }
 
-sample('First', 'Second', 'Third');
+sample("First", "Second", "Third");
+//Hello I am First
+// Hello I am Second
+//Hello I am third
 ```
 
 23. Guess the output and the reason behind that.
@@ -268,65 +275,64 @@ sample('First', 'Second', 'Third');
 ```js
 if (true) {
   const myFunc = function () {
-    console.log(username, 'Second');
+    console.log(username, "Second");
   };
-  console.log(username, 'First');
-  let username = 'Hello World!';
+  console.log(username, "First");
+  let username = "Hello World!";
   myFunc();
 }
+// Cannot access the variable name before initialization.
 ```
 
 24. Guess the output and the reason behind that.
 
 ```js
 function outer() {
-  let movie = 'Mad Max: Fury Road';
+  let movie = "Mad Max: Fury Road";
   function inner() {
-    console.log(
-      `I love this movie called ${movie.toUpperCase()}`
-    );
+    console.log(`I love this movie called ${movie.toUpperCase()}`);
   }
   inner();
 }
 
 outer();
+//I love this movie called MAD MAX: FURY ROAD
 ```
 
 25. Guess the output and the reason behind that.
 
 ```js
 function outer() {
-  let movie = 'Mad Max: Fury Road';
+  let movie = "Mad Max: Fury Road";
   function inner() {
-    let movie = 'Before Sunrise';
-    console.log(
-      `I love this movie called ${movie.toUpperCase()}`
-    );
+    let movie = "Before Sunrise";
+    console.log(`I love this movie called ${movie.toUpperCase()}`);
   }
   inner();
 }
 
 outer();
+
+// I love this movie called BEFORE SUNRISE
 ```
 
 26. Guess the output and the reason behind that.
 
 ```js
 function outer() {
-  let movie = 'Mad Max: Fury Road';
+  let movie = "Mad Max: Fury Road";
   function inner() {
-    let movie = 'Before Sunrise';
+    let movie = "Before Sunrise";
     function extraInner() {
-      let movie = 'Gone Girl';
-      console.log(
-        `I love this movie called ${movie.toUpperCase()}`
-      );
+      let movie = "Gone Girl";
+      console.log(`I love this movie called ${movie.toUpperCase()}`);
     }
     extraInner();
   }
   inner();
 }
 outer();
+// I love this movie called GONE GIRL
 ```
 
 30. Using reduce find the final value when the initial value passed is `100`. You have to pass the output of one function into the input of next function in the array `allFunctions` starts with `addOne` ends with `half`.
@@ -345,14 +351,11 @@ const half = (num) => {
   return num / 2;
 };
 
-let allFunctions = [
-  addOne,
-  subTwo,
-  multiplyThree,
-  addOne,
-  multiplyThree,
-  half,
-];
+let allFunctions = [addOne, subTwo, multiplyThree, addOne, multiplyThree, half];
 
 // Answer is: 447
+allFunctions.reduce((acc, cv) => {
+  acc = cv(acc);
+  return acc;
+}, 100);
 ```
